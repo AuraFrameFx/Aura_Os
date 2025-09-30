@@ -35,6 +35,7 @@ Java_dev_aurakai_auraframefx_canvas_CollabCanvasNative_initializeCanvas(JNIEnv *
                                                                         jobject /* this */) {
     LOGI("Initializing collaborative canvas");
     // TODO: Implement canvas initialization
+    // STUB: Returns JNI_TRUE for now. Replace with real initialization logic.
     return JNI_TRUE;
 }
 
@@ -57,6 +58,7 @@ Java_dev_aurakai_auraframefx_canvas_CollabCanvasNative_processCollaboration(JNIE
     env->ReleaseStringUTFChars(data, collabData);
 
     // TODO: Implement collaboration processing
+    // STUB: Returns JNI_TRUE for now. Replace with real collaboration logic.
     return JNI_TRUE;
 }
 

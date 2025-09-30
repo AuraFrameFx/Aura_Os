@@ -55,7 +55,7 @@ Java_dev_aurakai_auraframefx_oracledrive_native_OracleDriveNative_analyzeBootIma
     LOGI("Analyzing boot image: %s", path);
 
     // TODO: Implement actual boot.img analysis
-    // For now, return placeholder JSON
+    // STUB: Returns placeholder JSON for now. Replace with real analysis logic.
     std::string result = R"({
         "status": "success",
         "bootImageVersion": "Android 14",
@@ -99,7 +99,7 @@ Java_dev_aurakai_auraframefx_oracledrive_native_OracleDriveNative_extractRomComp
 
     try {
         // TODO: Implement ROM extraction logic
-        // This will extract boot.img, system.img, vendor.img, etc.
+        // STUB: Extraction not implemented. Replace with real extraction logic.
         LOGI("ROM components extracted successfully");
 
         env->ReleaseStringUTFChars(romPath, rom_path);
@@ -140,7 +140,7 @@ Java_dev_aurakai_auraframefx_oracledrive_native_OracleDriveNative_createCustomRo
 
     try {
         // TODO: Implement custom ROM creation logic
-        // This will apply Aura/Kai AI-generated modifications
+        // STUB: Custom ROM creation not implemented. Replace with real logic.
         LOGI("Custom ROM created successfully");
 
         env->ReleaseStringUTFChars(baseRomPath, base_path);

@@ -91,11 +91,7 @@ fun SandboxScreen() {
             ) {
                 Box(modifier = Modifier.fillMaxSize()) {
                     // TODO: Add CyberpunkBackgrounds when available
-                    Text(
-                        text = "🌌 Cyberpunk Background Placeholder",
-                        color = Color.White,
-                        modifier = Modifier.align(Alignment.Center)
-                    )
+                    CyberpunkBackgrounds()
                 }
             }
         }
@@ -109,17 +105,7 @@ fun SandboxScreen() {
                 // Aura Orb Test
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
                     // TODO: Add PlaceholderAuraOrb when available
-                    Box(
-                        modifier = Modifier.size(80.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Card(
-                            modifier = Modifier.size(60.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color(0xFFE94560))
-                        ) {
-                            Box(modifier = Modifier.fillMaxSize())
-                        }
-                    }
+                    PlaceholderAuraOrb()
                     Text(
                         text = "Aura Orb",
                         fontSize = 12.sp,
@@ -129,18 +115,7 @@ fun SandboxScreen() {
 
                 // Halo View Test
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Box(
-                        modifier = Modifier.size(80.dp),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        // TODO: Add HaloView when available
-                        Card(
-                            modifier = Modifier.size(60.dp),
-                            colors = CardDefaults.cardColors(containerColor = Color(0xFF00F5FF))
-                        ) {
-                            Box(modifier = Modifier.fillMaxSize())
-                        }
-                    }
+                    HaloView()
                     Text(
                         text = "Halo View",
                         fontSize = 12.sp,
@@ -183,11 +158,7 @@ fun SandboxScreen() {
                             contentAlignment = Alignment.Center
                         ) {
                             // TODO: Add DigitalTransitions when available
-                            Text(
-                                text = "✨ Digital Materialization Placeholder ✨",
-                                color = Color(0xFF00F5FF),
-                                fontWeight = FontWeight.Bold
-                            )
+                            DigitalTransitions()
                         }
                     }
                 }
@@ -269,6 +240,38 @@ private fun SandboxSection(
             color = Color(0xFF00F5FF)
         )
         content()
+    }
+}
+
+@Composable
+fun CyberpunkBackgrounds() {
+    // TODO: Implement cyberpunk-themed animated backgrounds
+    Box(modifier = Modifier.fillMaxSize()) {
+        Text("CyberpunkBackgrounds stub", color = Color.Magenta, modifier = Modifier.align(Alignment.Center))
+    }
+}
+
+@Composable
+fun PlaceholderAuraOrb() {
+    // TODO: Implement animated Aura Orb
+    Box(modifier = Modifier.size(80.dp)) {
+        Text("AuraOrb stub", color = Color.Cyan, modifier = Modifier.align(Alignment.Center))
+    }
+}
+
+@Composable
+fun HaloView() {
+    // TODO: Implement HaloView composable
+    Box(modifier = Modifier.size(100.dp)) {
+        Text("HaloView stub", color = Color.Yellow, modifier = Modifier.align(Alignment.Center))
+    }
+}
+
+@Composable
+fun DigitalTransitions() {
+    // TODO: Implement digital transition effects
+    Box(modifier = Modifier.fillMaxWidth().height(40.dp)) {
+        Text("DigitalTransitions stub", color = Color.Green, modifier = Modifier.align(Alignment.Center))
     }
 }
 

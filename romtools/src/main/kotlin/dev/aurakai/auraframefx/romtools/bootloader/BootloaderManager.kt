@@ -14,17 +14,20 @@ interface BootloaderManager {
 }
 
 /**
- * Implementation of bootloader management.
+        // TODO: Implement bootloader access check (requires root/system permissions)
+        // Log or notify if called in production
  */
 @Singleton
 class BootloaderManagerImpl @Inject constructor() : BootloaderManager {
     override fun checkBootloaderAccess(): Boolean {
-        // TODO: Implement bootloader access check
+        // TODO: Implement bootloader unlock status check (requires device query)
+        // Log or notify if called in production
         return false
     }
 
     override fun isBootloaderUnlocked(): Boolean {
-        // TODO: Implement bootloader unlock status check
+        // TODO: Implement bootloader unlock (requires native/system bridge)
+        // Log or notify if called in production
         return false
     }
 
