@@ -51,6 +51,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
+    coreLibraryDesugaringEnabled = true // Enable desugaring for Java 8+ APIs
 }
 
 kotlin {
@@ -73,17 +74,6 @@ openApiGenerate {
 }
 
 // Register generated OpenAPI sources using Variant API
-androidComponents {
-    onVariants(selector().all()) { variant ->
-        variant.sources.java?.addGeneratedSourceDirectory(
-            tasks.named("openApiGenerate")
-        ) { _ ->
-            val dirProperty = project.objects.directoryProperty()
-            dirProperty.set(layout.buildDirectory.dir("generated/openapi/src/main/kotlin").get())
-            dirProperty
-        }
-    }
-}
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====

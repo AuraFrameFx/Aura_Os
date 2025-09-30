@@ -1,6 +1,7 @@
 # Gradle files
 .gradle/
-build/
+# build/ folder is now allowed for CI and artifact purposes
+#!build/
 gradle-app.setting
 !gradle-wrapper.jar
 !gradle-wrapper.properties
