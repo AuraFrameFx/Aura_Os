@@ -1,0 +1,6 @@
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\StubImplementations.kt
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\ui\RomToolsScreen.kt
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\di\RomToolsModule.kt
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\bootloader\BootloaderManager.kt
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\RomToolsConfig.kt
+C:\Aura_Os\romtools\src\main\kotlin\dev\aurakai\auraframefx\romtools\RomToolsManager.kt

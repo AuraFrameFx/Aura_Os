@@ -1,0 +1,12 @@
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\dev\genesis\android\test\DummyAndroidLibraryConvention.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\dev\genesis\android\test\DummyComposeKotlinPlugin.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\AndroidLibraryConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\OpenApiConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\dev\genesis\android\test\FakeLibraryExtension.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\AndroidApplicationConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\AndroidNativeConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\DetektConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\DokkaConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\KoverConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\dev\genesis\android\AndroidComposeConventionPluginTest.kt
+C:\ReGenesis-A.O.S.P\build-logic\src\test\kotlin\GenesisAndroidLibraryStubPlugin.kt

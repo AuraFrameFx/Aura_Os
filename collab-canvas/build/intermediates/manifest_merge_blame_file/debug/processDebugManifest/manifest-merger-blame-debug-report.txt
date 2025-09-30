@@ -1,0 +1,18 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="dev.aurakai.auraframefx.collabcanvas" >
+4
+5    <uses-sdk android:minSdkVersion="34" />
+6
+7    <!-- Required permissions for Xposed module -->
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->C:\Aura_Os\collab-canvas\src\main\AndroidManifest.xml:5:5-67
+8-->C:\Aura_Os\collab-canvas\src\main\AndroidManifest.xml:5:22-64
+9    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+9-->C:\Aura_Os\collab-canvas\src\main\AndroidManifest.xml:6:5-79
+9-->C:\Aura_Os\collab-canvas\src\main\AndroidManifest.xml:6:22-76
+10    <!-- Library module - application-level metadata is defined in the main app module -->
+11    <application />
+11-->C:\Aura_Os\collab-canvas\src\main\AndroidManifest.xml:9:5-20
+12
+13</manifest>

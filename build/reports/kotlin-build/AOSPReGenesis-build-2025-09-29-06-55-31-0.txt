@@ -1,0 +1,111 @@
+Gradle start parameters:
+  tasks = [clean]
+  excluded tasks = []
+  current dir = C:\ReGenesis-A.O.S.P
+  project properties args = []
+  system properties args = [user.variant: , file.encoding: UTF-8, user.country: US, user.language: en]
+
+Time metrics:
+  Total Gradle task time: 8.69 s
+
+
+
+No Kotlin task was run
+Task ':app:clean' finished in 1.51 s
+Time metrics:
+  Total Gradle task time: 1.51 s
+
+Task ':collab-canvas:clean' finished in 0.70 s
+Time metrics:
+  Total Gradle task time: 0.70 s
+
+Task ':datavein-oracle-native:externalNativeBuildCleanDebug' finished in 0.58 s
+Time metrics:
+  Total Gradle task time: 0.58 s
+
+Task ':datavein-oracle-native:externalNativeBuildCleanRelease' finished in 0.56 s
+Time metrics:
+  Total Gradle task time: 0.56 s
+
+Task ':secure-comm:externalNativeBuildCleanRelease' finished in 0.50 s
+Time metrics:
+  Total Gradle task time: 0.50 s
+
+Task ':colorblendr:clean' finished in 0.47 s
+Time metrics:
+  Total Gradle task time: 0.47 s
+
+Task ':datavein-oracle-native:clean' finished in 0.44 s
+Time metrics:
+  Total Gradle task time: 0.44 s
+
+Task ':secure-comm:externalNativeBuildCleanDebug' finished in 0.41 s
+Time metrics:
+  Total Gradle task time: 0.41 s
+
+Task ':secure-comm:clean' finished in 0.38 s
+Time metrics:
+  Total Gradle task time: 0.38 s
+
+Task ':sandbox-ui:clean' finished in 0.37 s
+Time metrics:
+  Total Gradle task time: 0.37 s
+
+Task ':benchmark:clean' finished in 0.34 s
+Time metrics:
+  Total Gradle task time: 0.34 s
+
+Task ':oracle-drive-integration:clean' finished in 0.32 s
+Time metrics:
+  Total Gradle task time: 0.32 s
+
+Task ':module-c:clean' finished in 0.31 s
+Time metrics:
+  Total Gradle task time: 0.31 s
+
+Task ':module-d:clean' finished in 0.30 s
+Time metrics:
+  Total Gradle task time: 0.30 s
+
+Task ':feature-module:clean' finished in 0.29 s
+Time metrics:
+  Total Gradle task time: 0.29 s
+
+Task ':module-e:clean' finished in 0.28 s
+Time metrics:
+  Total Gradle task time: 0.28 s
+
+Task ':module-f:clean' finished in 0.26 s
+Time metrics:
+  Total Gradle task time: 0.26 s
+
+Task ':module-a:clean' finished in 0.25 s
+Time metrics:
+  Total Gradle task time: 0.25 s
+
+Task ':module-b:clean' finished in 0.17 s
+Time metrics:
+  Total Gradle task time: 0.17 s
+
+Task ':list:clean' finished in 0.14 s
+Time metrics:
+  Total Gradle task time: 0.14 s
+
+Task ':core-module:clean' finished in 0.09 s
+Time metrics:
+  Total Gradle task time: 0.09 s
+
+Task ':clean' finished in 0.04 s
+Time metrics:
+  Total Gradle task time: 0.04 s
+
+Task ':jvm-test:clean' finished in 0.01 s
+Time metrics:
+  Total Gradle task time: 0.01 s
+
+Task ':utilities:clean' finished in 0.00 s
+Time metrics:
+  Total Gradle task time: 0.00 s
+
+Task ':screenshot-tests:clean' finished in 0.00 s
+

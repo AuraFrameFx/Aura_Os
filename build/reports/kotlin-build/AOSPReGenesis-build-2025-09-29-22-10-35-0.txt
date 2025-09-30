@@ -1,0 +1,8 @@
+Gradle start parameters:
+  tasks = [:build-logic:updateDaemonJvm]
+  excluded tasks = []
+  current dir = C:\Aura_Os
+  project properties args = [android.studio.version: 252.25557.131.2521.14170811, android.injected.attribution.file.location: C:\Aura_Os\.gradle, android.injected.invoked.from.ide: true]
+  system properties args = [idea.active: true, user.variant: , file.encoding: UTF-8, idea.version: 2025.2, user.language: zh, user.country: CN, idea.vendor.name: Google]
+
+No Kotlin task was run
