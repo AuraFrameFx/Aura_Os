@@ -76,13 +76,11 @@ openApiGenerate {
 // Register generated OpenAPI sources using Variant API
 androidComponents {
     onVariants(selector().all()) { variant ->
+        val openApiGenerateTask = tasks.named("openApiGenerate", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class.java)
         variant.sources.java?.addGeneratedSourceDirectory(
-            tasks.named("openApiGenerate", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class.java)
-        ) { openApiTask -> // You can use openApiTask if needed to derive the path from task properties
-            val generatedSourceDirProperty = project.objects.directoryProperty() // Create DirectoryProperty
-            generatedSourceDirProperty.set(project.layout.buildDirectory.dir("generated/openapi/src/main/kotlin")) // Set its value
-            generatedSourceDirProperty // Return the DirectoryProperty
-        }
+            openApiGenerateTask,
+            { task -> file("${task.outputDir.get()}/src/main/kotlin") }
+        )
     }
 }
 
