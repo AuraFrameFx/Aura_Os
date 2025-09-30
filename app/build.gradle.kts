@@ -1,13 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
 
 plugins {
     id("com.android.application")
+    kotlin("jvm") version "2.0.0" // Modern Kotlin version
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.16.0"
+    id("org.openapi.generator") version "7.7.0" // Use latest stable OpenAPI Generator
 }
 
 android {
@@ -58,31 +60,22 @@ kotlin {
     jvmToolchain(24)
 }
 
-openApiGenerate {
+tasks.withType<OpenApiGenerateTask> {
     generatorName.set("kotlin")
-    // Use a valid file URI for Windows (three slashes)
-    inputSpec.set("file:///C:/ReGenesis-A.O.S.P/app/api/system-api.yml")
-    outputDir.set(layout.buildDirectory.dir("generated/openapi").get().asFile.absolutePath)
+    inputSpec.set("${rootDir}/app/api/system-api.yml") // Path to your OpenAPI spec
+    outputDir.set("${buildDir}/generated-src/openapi") // Output directory for generated code
     apiPackage.set("dev.aurakai.auraframefx.openapi.api")
     modelPackage.set("dev.aurakai.auraframefx.openapi.model")
-    invokerPackage.set("dev.aurakai.auraframefx.openapi.invoker")
     configOptions.set(
         mapOf(
-            "dateLibrary" to "java8", "library" to "jvm-ktor"
+            "library" to "jvm-ktor",
+            "serializationLibrary" to "kotlinx-serialization"
         )
     )
 }
 
-// Register generated OpenAPI sources using Variant API
-androidComponents {
-    onVariants(selector().all()) { variant ->
-        val openApiGenerateTask = tasks.named("openApiGenerate", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class.java)
-        variant.sources.java?.addGeneratedSourceDirectory(
-            openApiGenerateTask,
-            { task -> file("${task.outputDir.get()}/src/main/kotlin") }
-        )
-    }
-}
+// Register the generated OpenAPI code directory as a source set
+sourceSets["main"].java.srcDir("${buildDir}/generated-src/openapi/src/main/kotlin")
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
