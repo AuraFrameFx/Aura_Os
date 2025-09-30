@@ -39,6 +39,7 @@ android {
     // Enable AIDL for the app module
     buildFeatures {
         aidl = true
+        
     }
 
     testOptions {
@@ -51,7 +52,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_24
         targetCompatibility = JavaVersion.VERSION_24
     }
-    coreLibraryDesugaringEnabled = true // Enable desugaring for Java 8+ APIs
 }
 
 kotlin {
@@ -74,6 +74,17 @@ openApiGenerate {
 }
 
 // Register generated OpenAPI sources using Variant API
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.java?.addGeneratedSourceDirectory(
+            tasks.named("openApiGenerate", org.openapitools.generator.gradle.plugin.tasks.GenerateTask::class.java)
+        ) { openApiTask -> // You can use openApiTask if needed to derive the path from task properties
+            val generatedSourceDirProperty = project.objects.directoryProperty() // Create DirectoryProperty
+            generatedSourceDirProperty.set(project.layout.buildDirectory.dir("generated/openapi/src/main/kotlin")) // Set its value
+            generatedSourceDirProperty // Return the DirectoryProperty
+        }
+    }
+}
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
@@ -139,7 +150,6 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     // This bundle includes Analytics, Crashlytics, Performance, Auth, Firestore, Messaging, and Config
     implementation(libs.bundles.firebase)
-
     // Alternative: Use specific Firebase bundles for modular approach
     // implementation(libs.bundles.firebase.core)     // Analytics, Crashlytics, Performance only
     // implementation(libs.bundles.firebase.auth)     // Authentication
