@@ -159,6 +159,7 @@ include(":screenshot-tests")  // Placeholder module to satisfy CI/task reference
 include(":jvm-test")  // JVM-only module
 include(":list")  // JVM-only module
 include(":utilities")  // AI entities' chosen utilities
+include(":data:api")
 
 // ===== MODULE CONFIGURATION =====
 rootProject.children.forEach { project ->

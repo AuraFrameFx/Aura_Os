@@ -1,0 +1,24 @@
+openapi: 3.0.0
+info:
+  title: Oracle Cloud API
+  version: 1.0.0
+paths:
+  /objects:
+    get:
+      operationId: listObjects
+      summary: List objects in Oracle Cloud
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+

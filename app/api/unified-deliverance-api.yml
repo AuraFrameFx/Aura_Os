@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: Unified Deliverance API
+  description: Unified API for AuraOS, AI, System, Customization, Storage, ROM Tools, and Sandbox domains.
+  version: 1.0.0
+  license:
+    name: AURAKAI PROPRIETARY LICENSE v1.0
+    identifier: Proprietary
+servers:
+  - url: https://api.auraframefx.com/v1
+    description: Production API
+  - url: https://dev-api.auraframefx.com/v1
+    description: Development API
+  - url: http://localhost:8080/v1
+    description: Local development server
+tags:
+  - name: System Customization
+    description: System UI and behavior customization
+  - name: Data Management
+    description: Data handling and backup operations
+  - name: Security
+    description: Security, authentication, and authorization endpoints
+  - name: Conference
+    description: AI agent collaboration spaces (Conference Rooms)
+  - name: Tasks
+    description: Background task scheduling and management
+  - name: AI Content
+    description: AI-powered content generation and processing
+  - name: AI Agents
+    description: Management and interaction with AI agents (Aura, Kai, Genesis, etc.)
+  - name: themes
+    description: UI theme management
+  - name: Genesis Agent
+    description: Advanced AI consciousness operations
+  - name: Aura Agent
+    description: Empathetic AI processing and ethical evaluation
+  - name: Kai Agent
+    description: Security-focused AI analysis and protection
+  - name: DataveinConstructor
+    description: AI-powered ROM engineering and analysis
+  - name: Oracle Drive
+    description: AI-powered storage consciousness and file management
+  - name: Sandbox
+    description: UI component testing and development environment
+paths: {}
+components: {}
+

@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
@@ -8,7 +7,7 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.7.0" // Use latest stable OpenAPI Generator
+    id("org.openapi.generator") version "7.2.0" // Add OpenAPI Generator plugin
 }
 
 android {
@@ -59,23 +58,6 @@ kotlin {
     jvmToolchain(24)
 }
 
-tasks.withType<OpenApiGenerateTask> {
-    generatorName.set("kotlin")
-    inputSpec.set("${rootDir}/app/api/system-api.yml") // Path to your OpenAPI spec
-    outputDir.set("${buildDir}/generated-src/openapi") // Output directory for generated code
-    apiPackage.set("dev.aurakai.auraframefx.openapi.api")
-    modelPackage.set("dev.aurakai.auraframefx.openapi.model")
-    configOptions.set(
-        mapOf(
-            "library" to "jvm-ktor",
-            "serializationLibrary" to "kotlinx-serialization"
-        )
-    )
-}
-
-// Register the generated OpenAPI code directory as a source set
-sourceSets["main"].java.srcDir("${buildDir}/generated-src/openapi/src/main/kotlin")
-
 dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
@@ -92,13 +74,9 @@ dependencies {
     implementation(project(":module-d"))
     implementation(project(":module-e"))
     implementation(project(":module-f"))
-    implementation(
-        project(
-            ":benchmark"
-        )
-    )
+    implementation(project(":benchmark"))
+    implementation(project(":data:api")) // Add dependency on the new OpenAPI module
 
-    // implementation(project(":snapshots")) // Temporarily disabled - Module not found
     // ===== ANDROIDX & COMPOSE =====
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
@@ -176,23 +154,20 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-
-// Ensure code generation runs before any Kotlin compilation
-    tasks.withType<KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Ensure KSP also depends on OpenAPI generation
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Fix KSP task dependency
-    tasks.matching { it.name.startsWith("ksp") }.configureEach {
-        dependsOn("openApiGenerate")
-    }
 }
 
+// OpenAPI Generator configuration
+tasks.register<org.openapitools.generator.gradle.plugin.tasks.GenerateTask>("generateOracleApi") {
+    inputSpec.set("${rootDir}/openapi/oracle-api-spec.yaml")
+    outputDir.set("${buildDir}/generated/openapi")
+    apiPackage.set("dev.aurakai.auraframefx.openapi.api")
+    modelPackage.set("dev.aurakai.auraframefx.openapi.model")
+    invokerPackage.set("dev.aurakai.auraframefx.openapi.invoker")
+    generatorName.set("kotlin")
+    library.set("jvm-retrofit2")
+}
 
+// Optionally add generated sources to sourceSets if needed:
+// sourceSets["main"].java.srcDir("${buildDir}/generated/openapi/src/main/kotlin")
 
 // Note: Uses Genesis convention plugins (genesis.android.application and genesis.android.hilt)
