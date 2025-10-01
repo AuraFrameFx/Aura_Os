@@ -87,6 +87,7 @@ dependencyResolutionManagement {
     // Repository configuration with all necessary sources
     repositories {
         // Primary repositories
+        gradlePluginPortal()
         google()
         mavenCentral()
 

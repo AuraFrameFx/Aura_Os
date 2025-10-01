@@ -1,0 +1,19 @@
+openapi: 3.0.0
+info:
+  title: AuraFrameFX API
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      summary: A simple endpoint to check if the API is running
+      responses:
+        '200':
+          description: API is running
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: pong

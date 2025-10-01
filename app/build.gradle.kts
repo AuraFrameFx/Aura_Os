@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 // ==== GENESIS PROTOCOL - MAIN APPLICATION ====
 // This build script now uses the custom convention plugins for a cleaner setup.
@@ -8,7 +7,6 @@ plugins {
     id("com.android.application")
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
-    id("org.openapi.generator") version "7.7.0" // Use latest stable OpenAPI Generator
 }
 
 android {
@@ -59,32 +57,16 @@ kotlin {
     jvmToolchain(24)
 }
 
-tasks.withType<OpenApiGenerateTask> {
-    generatorName.set("kotlin")
-    inputSpec.set("${rootDir}/app/api/system-api.yml") // Path to your OpenAPI spec
-    outputDir.set("${buildDir}/generated-src/openapi") // Output directory for generated code
-    apiPackage.set("dev.aurakai.auraframefx.openapi.api")
-    modelPackage.set("dev.aurakai.auraframefx.openapi.model")
-    configOptions.set(
-        mapOf(
-            "library" to "jvm-ktor",
-            "serializationLibrary" to "kotlinx-serialization"
-        )
-    )
-}
-
-// Register the generated OpenAPI code directory as a source set
-sourceSets["main"].java.srcDir("${buildDir}/generated-src/openapi/src/main/kotlin")
 
 dependencies {
     // ===== MODULE DEPENDENCIES =====
     implementation(project(":core-module"))
     implementation(project(":feature-module"))
-    implementation(project(":romtools"))  // Temporarily disabled - Module not found
+    implementation(project(":romtools"))
     implementation(project(":secure-comm"))
-    implementation(project(":collab-canvas"))  // Temporarily disabled - YukiHookAPI issues
+    implementation(project(":collab-canvas"))
     implementation(project(":colorblendr"))
-    implementation(project(":sandbox-ui"))  // Temporarily disabled - Compose compilation issues
+    implementation(project(":sandbox-ui"))
     implementation(project(":datavein-oracle-native"))
     implementation(project(":module-a"))
     implementation(project(":module-b"))
@@ -92,11 +74,7 @@ dependencies {
     implementation(project(":module-d"))
     implementation(project(":module-e"))
     implementation(project(":module-f"))
-    implementation(
-        project(
-            ":benchmark"
-        )
-    )
+    implementation(project(":benchmark"))
 
     // implementation(project(":snapshots")) // Temporarily disabled - Module not found
     // ===== ANDROIDX & COMPOSE =====
@@ -176,22 +154,8 @@ dependencies {
 
     // --- DEBUGGING ---
     debugImplementation(libs.leakcanary.android)
-
-// Ensure code generation runs before any Kotlin compilation
-    tasks.withType<KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Ensure KSP also depends on OpenAPI generation
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-        dependsOn("openApiGenerate")
-    }
-
-// Fix KSP task dependency
-    tasks.matching { it.name.startsWith("ksp") }.configureEach {
-        dependsOn("openApiGenerate")
-    }
 }
+
 
 
 

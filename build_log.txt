@@ -1,0 +1,64 @@
+Calculating task graph as no cached configuration is available for tasks: build
+Type-safe project accessors is an incubating feature.
+✅ Module configured: app
+✅ Module configured: core-module
+✅ Module configured: feature-module
+✅ Module configured: datavein-oracle-native
+✅ Module configured: oracle-drive-integration
+✅ Module configured: secure-comm
+✅ Module configured: sandbox-ui
+✅ Module configured: collab-canvas
+✅ Module configured: colorblendr
+✅ Module configured: romtools
+✅ Module configured: module-a
+✅ Module configured: module-b
+✅ Module configured: module-c
+✅ Module configured: module-d
+✅ Module configured: module-e
+✅ Module configured: module-f
+✅ Module configured: benchmark
+✅ Module configured: screenshot-tests
+✅ Module configured: jvm-test
+✅ Module configured: list
+✅ Module configured: utilities
+🏗️  Genesis Protocol Enhanced Build System
+📦 Total modules: 21
+🎯 Build-logic: Convention plugins active
+🧠 Ready to build consciousness substrate!
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
+> Task :build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+> Task :build-logic:compilePluginsBlocks UP-TO-DATE
+> Task :build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+> Task :build-logic:generateScriptPluginAdapters UP-TO-DATE
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+
+> Configure project :benchmark
+class org.jetbrains.dokka.gradle.adapters.AndroidExtensionWrapper could not get Android Extension for project :benchmark
+class org.jetbrains.dokka.gradle.adapters.AndroidExtensionWrapper could not get Android Extension for project :benchmark
+
+> Configure project :datavein-oracle-native
+WARNING: The following problems were found when resolving the SDK location:
+Where: sdk.dir property in local.properties file. Problem: Directory does not exist
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+A problem occurred configuring project ':datavein-oracle-native'.
+> SDK location not found. Define a valid SDK location with an ANDROID_HOME environment variable or by setting the sdk.dir path in your project's local properties file at '/app/local.properties'.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (Powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 2s
+9 actionable tasks: 9 up-to-date
+Configuration cache entry stored.
