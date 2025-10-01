@@ -6,7 +6,6 @@ import org.openapitools.generator.gradle.plugin.tasks.OpenApiGenerateTask
 
 plugins {
     id("com.android.application")
-    kotlin("jvm")  // Modern Kotlin version
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     id("org.openapi.generator") version "7.7.0" // Use latest stable OpenAPI Generator
